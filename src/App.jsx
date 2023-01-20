@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import AlertMsg from "./AlertMsg";
 import Thau from "./images/thau.jpg";
+import background from "./images/tet2023.jpeg";
 
 function App() {
   const [box1, setBox1] = useState(1);
@@ -31,108 +32,118 @@ function App() {
   };
 
   return (
-    <Box
-      sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+    <div
+      style={{
+        backgroundImage: `url(${background})`,
+        height: "100vh",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      }}
     >
-      <AlertMsg />
-      <Box sx={{ width: "639px", height: "359px", position: "relative" }}>
-        <Box
-          component="img"
-          src="https://minhlong1.net/wp-content/uploads/2021/07/8de2d853429fe83be41530a7f404c54c-600x337.png"
-          alt=""
-          sx={{ width: "639px", height: "359px" }}
-        />
-        <Box
-          component="img"
-          src={`./images/${box1}.png`}
-          sx={{
-            position: "absolute",
-            top: "120px",
-            left: "210px",
-            height: "70px",
-            width: "90px",
-          }}
-          alt=""
-        />
-        <Box
-          component="img"
-          src={`./images/${box2}.png`}
-          sx={{
-            position: "absolute",
-            top: "120px",
-            right: "210px",
-            height: "70px",
-            width: "90px",
-          }}
-          alt=""
-        />
-        <Box
-          component="img"
-          src={`./images/${box3}.png`}
-          sx={{
-            position: "absolute",
-            top: "200px",
-            left: "275px",
-            height: "70px",
-            width: "90px",
-          }}
-          alt=""
-        />
-        <Box
-          component="img"
-          src={Thau}
-          sx={{
-            position: "absolute",
-            width: "300px",
-            height: "300px",
-            left: isStart ? "170px" : "-130px",
-            top: isStart ? "30px" : "30px",
-            borderRadius: "50%",
-          }}
-          alt=""
-        />
-      </Box>
       <Box
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          gap: "10px",
-          padding: "0",
-        }}
+        sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
       >
-        <Button
-          variant="contained"
+        <AlertMsg />
+        <Box sx={{ width: "639px", height: "359px", position: "relative" }}>
+          <Box
+            component="img"
+            src="https://minhlong1.net/wp-content/uploads/2021/07/8de2d853429fe83be41530a7f404c54c-600x337.png"
+            alt=""
+            sx={{ width: "639px", height: "359px" }}
+          />
+          <Box
+            component="img"
+            src={`./images/${box1}.png`}
+            sx={{
+              position: "absolute",
+              top: "120px",
+              left: "210px",
+              height: "70px",
+              width: "90px",
+            }}
+            alt=""
+          />
+          <Box
+            component="img"
+            src={`./images/${box2}.png`}
+            sx={{
+              position: "absolute",
+              top: "120px",
+              right: "210px",
+              height: "70px",
+              width: "90px",
+            }}
+            alt=""
+          />
+          <Box
+            component="img"
+            src={`./images/${box3}.png`}
+            sx={{
+              position: "absolute",
+              top: "200px",
+              left: "275px",
+              height: "70px",
+              width: "90px",
+            }}
+            alt=""
+          />
+          <Box
+            component="img"
+            src={Thau}
+            sx={{
+              position: "absolute",
+              width: "300px",
+              height: "300px",
+              left: isStart ? "170px" : "-130px",
+              top: isStart ? "30px" : "30px",
+              borderRadius: "50%",
+            }}
+            alt=""
+          />
+        </Box>
+        <Box
           sx={{
-            backgroundColor: "#f44336",
-            ":hover": { backgroundColor: "#f44336", opacity: 0.8 },
+            display: "flex",
+            flexDirection: "row",
+            gap: "10px",
+            padding: "0",
           }}
-          onClick={hanldeClickOff}
         >
-          Đậy Nắp
-        </Button>
-        <Button
-          variant="contained"
-          sx={{
-            backgroundColor: "#ffc400",
-            color: "black",
-            ":hover": { backgroundColor: "#ffc400", opacity: 0.8 },
-          }}
-          onClick={handleChange}
-        >
-          Xốc
-        </Button>
-        <Button
-          variant="contained"
-          sx={{
-            backgroundColor: "#388e3c",
-            ":hover": { backgroundColor: "#388e3c", opacity: 0.8 },
-          }}
-          onClick={hanldeClickOn}
-        >
-          Mở Nắp
-        </Button>
+          <Button
+            variant="contained"
+            sx={{
+              backgroundColor: "#5336f4",
+              ":hover": { backgroundColor: "#5336f4", opacity: 0.8 },
+            }}
+            onClick={hanldeClickOff}
+          >
+            Đậy Nắp
+          </Button>
+          <Button
+            variant="contained"
+            sx={{
+              backgroundColor: "#ffc400",
+              color: "white",
+              ":hover": { backgroundColor: "#ffc400", opacity: 0.8 },
+            }}
+            onClick={handleChange}
+          >
+            Xốc
+          </Button>
+          <Button
+            variant="contained"
+            sx={{
+              backgroundColor: "#388e3c",
+              ":hover": { backgroundColor: "#388e3c", opacity: 0.8 },
+            }}
+            onClick={hanldeClickOn}
+          >
+            Mở Nắp
+          </Button>
+        </Box>
       </Box>
-    </Box>
+    </div>
   );
 }
 
