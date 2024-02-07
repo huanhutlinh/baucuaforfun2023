@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import AlertMsg from "./AlertMsg";
 import Thau from "./images/thau.jpg";
-import background from "./images/tet2023.jpeg";
+import background from "./images/tet2024.jpg";
 
 function App() {
   const [box1, setBox1] = useState(1);
